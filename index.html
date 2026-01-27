@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BigTime Company</title>
+
+  <!-- SEO -->
+  <title>BigTime Company – Official Business & Conglomerate Website</title>
+  <meta name="description" content="BigTime Company is a multi-vertical business conglomerate operating across technology, social media, brokerage, and strategic networking. Official website." />
+  <link rel="canonical" href="https://bigtime.business/" />
 
   <style>
     :root {
       --bg: #0b0b0f;
       --accent: #f5c400;
-      --text: #eaeaea;
+      --text: #f3f4f6;
       --muted: #9ca3af;
-      --card: #14141c;
     }
 
     * {
@@ -22,27 +25,32 @@
     }
 
     body {
-      background: radial-gradient(circle at top, #111827, var(--bg));
+      background:
+        radial-gradient(1400px 700px at 20% -10%, #1f2937 0%, transparent 60%),
+        radial-gradient(1000px 600px at 90% 10%, #111827 0%, transparent 60%),
+        var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 24px 8vw;
-      position: sticky;
+      padding: 40px 8vw;
+      position: fixed;
       top: 0;
-      background: rgba(11,11,15,0.75);
-      backdrop-filter: blur(10px);
+      width: 100%;
+      background: rgba(11,11,15,0.65);
+      backdrop-filter: blur(18px);
       z-index: 100;
     }
 
     .logo {
-      font-size: 1.4rem;
-      font-weight: 800;
-      letter-spacing: 0.5px;
+      font-size: 1.8rem;
+      font-weight: 900;
+      letter-spacing: 0.8px;
     }
 
     .logo span {
@@ -50,32 +58,41 @@
     }
 
     nav a {
-      margin-left: 24px;
+      margin-left: 40px;
       text-decoration: none;
       color: var(--muted);
       font-weight: 500;
+      font-size: 1rem;
     }
 
     nav a:hover {
       color: var(--accent);
     }
 
+    main {
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    /* HERO */
     .hero {
-      min-height: 90vh;
+      min-height: 120vh;
       display: flex;
       align-items: center;
       padding: 0 8vw;
+      padding-top: 200px;
     }
 
     .hero-content {
-      max-width: 650px;
+      max-width: 1100px;
     }
 
     .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-size: clamp(4.5rem, 7vw, 7rem);
       font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 20px;
+      line-height: 1.05;
+      margin-bottom: 48px;
+      letter-spacing: -0.03em;
     }
 
     .hero h1 span {
@@ -83,137 +100,154 @@
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1.45rem;
       color: var(--muted);
-      margin-bottom: 32px;
+      max-width: 900px;
+      line-height: 1.9;
     }
 
-    .cta {
-      display: inline-block;
-      padding: 14px 28px;
-      background: var(--accent);
-      color: #000;
-      border-radius: 999px;
-      font-weight: 700;
-      text-decoration: none;
+    /* STATEMENT SECTIONS */
+    section.statement {
+      padding: 180px 8vw;
     }
 
-    section {
-      padding: 100px 8vw;
+    .statement h2 {
+      font-size: clamp(3.5rem, 6vw, 5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      max-width: 1200px;
+      letter-spacing: -0.02em;
     }
 
-    .section-title {
-      font-size: 2.2rem;
-      font-weight: 800;
+    .statement p {
+      margin-top: 40px;
+      font-size: 1.4rem;
+      max-width: 900px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .divider {
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+    }
+
+    /* VALUES */
+    .values {
+      padding: 200px 8vw;
+      text-align: center;
+    }
+
+    .values h3 {
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      font-weight: 900;
+      margin-bottom: 80px;
+    }
+
+    .values span {
+      display: block;
+      font-size: 1.8rem;
+      margin: 32px 0;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 200px;
+      padding: 140px 8vw 80px;
+      background: rgba(0,0,0,0.4);
+    }
+
+    .footer-top {
+      font-size: 3rem;
+      font-weight: 900;
       margin-bottom: 40px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 28px;
+    .footer-top span {
+      color: var(--accent);
     }
 
-    .card {
-      background: var(--card);
-      border-radius: 18px;
-      padding: 28px;
-      border: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .card h3 {
-      margin-bottom: 12px;
-      font-size: 1.2rem;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    footer {
-      padding: 40px 8vw;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      color: var(--muted);
-      font-size: 0.9rem;
+    .footer-bottom {
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    footer span {
-      color: var(--accent);
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 80px;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">BigTime<span>.</span>Business</div>
+    <div class="logo">BigTime<span>.</span>Company</div>
     <nav>
-      <a href="#about">About</a>
-      <a href="#wings">Wings</a>
-      <a href="#vision">Vision</a>
-      <a href="#contact">Contact</a>
+      <a href="about.html">About</a>
+      <a href="wings.html">Wings</a>
+      <a href="vision.html">Vision</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Building <span>Big</span> Things,<br>Across Every Industry</h1>
+  <main>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>
+          <span>BigTime Company</span><br>
+          Building Big Things<br>
+          Across Every Industry
+        </h1>
+        <p>
+          BigTime Company is a next-generation business conglomerate built to create, operate, and scale high-impact ventures with long-term vision, strategic execution, and institutional discipline.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="statement">
+      <h2>
+        We don’t chase trends.<br>
+        We build institutions.
+      </h2>
       <p>
-        BigTime Company is a next-generation conglomerate focused on building, acquiring, and scaling high-impact businesses across technology, finance, infrastructure, and innovation.
+        Our focus is permanence. Every venture under BigTime Company is engineered with scale, resilience, and dominance in mind — designed to survive cycles, shifts, and generations.
       </p>
-      <a href="#about" class="cta">Explore BigTime</a>
-    </div>
-  </section>
+    </section>
 
-  <section id="about">
-    <h2 class="section-title">About BigTime</h2>
-    <p style="max-width: 800px; color: var(--muted);">
-      BigTime Company is structured as a parent conglomerate designed to operate multiple independent yet interconnected business verticals. Each wing functions autonomously while leveraging shared strategy, capital, and long-term vision from the core.
-    </p>
-  </section>
+    <div class="divider"></div>
 
-  <section id="wings">
-    <h2 class="section-title">Company Wings</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>BigTime Web & Tech Solutions</h3>
-        <p>Website development, software solutions, PC assembly, computer labs, and end-to-end technical infrastructure.</p>
-      </div>
-      <div class="card">
-        <h3>BigTime Social</h3>
-        <p>Social media management, content strategy, growth, branding, and digital presence optimization.</p>
-      </div>
-      <div class="card">
-        <h3>BigTime Brokerage</h3>
-        <p>High-value deal facilitation including real estate, petrol pumps, and large asset transactions.</p>
-      </div>
-      <div class="card">
-        <h3>BigTime Strategic Networks</h3>
-        <p>Strategic networking and facilitation — connecting influence, access, and opportunity within trusted networks.</p>
-      </div>
-    </div>
-  </section>
+    <section class="statement">
+      <h2>
+        Power is built quietly.<br>
+        Impact is felt everywhere.
+      </h2>
+      <p>
+        From technology to capital, media to strategy, BigTime Company operates across verticals that shape markets, influence behavior, and compound authority over time.
+      </p>
+    </section>
 
-  <section id="vision">
-    <h2 class="section-title">Our Vision</h2>
-    <p style="max-width: 800px; color: var(--muted);">
-      To create a resilient, future-proof ecosystem of companies that define industries rather than follow them. BigTime exists to think long-term, execute relentlessly, and build institutions that last.
-    </p>
-  </section>
+    <section class="values">
+      <h3>OUR CORE PRINCIPLES</h3>
+      <span>DISCIPLINE</span>
+      <span>SCALE</span>
+      <span>LONG-TERM THINKING</span>
+      <span>CONTROL</span>
+    </section>
 
-  <section id="contact">
-    <h2 class="section-title">Get in Touch</h2>
-    <p style="color: var(--muted);">Official communications only.</p>
-    <p style="margin-top: 12px;">-----@bigtime.company</p>
-  </section>
+  </main>
 
   <footer>
-    <div>© <span>BigTime Company</span> · All rights reserved</div>
-    <div>Built for scale. Designed for impact.</div>
+    <div class="footer-top">BigTime<span>.</span>Company</div>
+    <div class="footer-bottom">
+      <div>© BigTime Company</div>
+      <div>bigtime.business</div>
+    </div>
   </footer>
 
 </body>

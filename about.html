@@ -9,197 +9,259 @@
   <link rel="canonical" href="https://bigtime.business/about.html" />
 
   <style>
+:root {
+  --bg: #0b0b0f;
+  --accent: #f5c400;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
 
-    @media (max-width: 768px) {
+body {
+  background:
+    radial-gradient(1400px 700px at 20% -10%, #1f2937 0%, transparent 60%),
+    radial-gradient(1000px 600px at 90% 10%, #111827 0%, transparent 60%),
+    var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
+/* ================= HEADER ================= */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 36px 8vw;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(11,11,15,0.65);
+  backdrop-filter: blur(18px);
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+nav a {
+  margin-left: 40px;
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* ================= MAIN ================= */
+
+main {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-top: 200px;
+}
+
+section {
+  padding: 160px 8vw;
+}
+
+h1 {
+  font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 48px;
+}
+
+h1 span {
+  color: var(--accent);
+}
+
+h2 {
+  font-size: clamp(2.4rem, 5.5vw, 4.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 40px;
+  letter-spacing: -0.02em;
+}
+
+p {
+  font-size: 1.35rem;
+  max-width: 950px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+/* ================= DIVIDER ================= */
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.18),
+    transparent
+  );
+}
+
+/* ================= PRINCIPLES ================= */
+
+.principles span {
+  display: block;
+  font-size: 1.6rem;
+  margin: 28px 0;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  margin-top: 200px;
+  padding: 140px 8vw 80px;
+  background: rgba(0,0,0,0.4);
+}
+
+.footer-top {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+
+.footer-top span {
+  color: var(--accent);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 80px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
   header {
-    padding: 20px 6vw;
+    padding: 28px 6vw;
   }
 
-  nav {
-    display: none; /* clean for now, we’ll add a menu later */
-  }
-
-  .logo {
-    font-size: 1.4rem;
-  }
-
-  main {
-    padding-top: 160px;
+  nav a {
+    margin-left: 24px;
   }
 
   section {
     padding: 120px 6vw;
   }
 
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 16px;
+    padding: 22px 6vw;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    margin: 8px 14px;
+    font-size: 0.95rem;
+  }
+
+  main {
+    padding-top: 180px;
+  }
+
+  section {
+    padding: 100px 6vw;
+  }
+
   h1 {
-    font-size: clamp(2.8rem, 9vw, 4rem);
+    font-size: clamp(2.6rem, 8vw, 3.8rem);
     margin-bottom: 32px;
+  }
+
+  h2 {
+    font-size: clamp(2.1rem, 7vw, 3rem);
+    margin-bottom: 28px;
   }
 
   p {
     font-size: 1.1rem;
-    line-height: 1.8;
   }
 
-  .hero {
-    padding-top: 120px;
-  }
-
-  .hero-content {
-    max-width: 100%;
+  .principles span {
+    font-size: 1.2rem;
+    letter-spacing: 0.12em;
   }
 
   footer {
-    position: static;
-    margin-top: 120px;
-    padding: 80px 6vw 60px;
+    padding: 100px 6vw 60px;
+  }
+
+  .footer-top {
+    font-size: 2.2rem;
   }
 
   .footer-bottom {
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
     text-align: center;
   }
 }
 
-    
-    :root {
-      --bg: #0b0b0f;
-      --accent: #f5c400;
-      --text: #f3f4f6;
-      --muted: #9ca3af;
-    }
+@media (max-width: 480px) {
+  header {
+    padding: 18px 5vw;
+  }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    }
+  .logo {
+    font-size: 1.4rem;
+  }
 
-    body {
-      background:
-        radial-gradient(1400px 700px at 20% -10%, #1f2937 0%, transparent 60%),
-        radial-gradient(1000px 600px at 90% 10%, #111827 0%, transparent 60%),
-        var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
+  section {
+    padding: 80px 5vw;
+  }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 40px 8vw;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(11,11,15,0.65);
-      backdrop-filter: blur(18px);
-      z-index: 100;
-    }
+  p {
+    font-size: 1.05rem;
+  }
 
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 900;
-      letter-spacing: 0.8px;
-    }
+  .principles span {
+    font-size: 1.05rem;
+  }
+}
+</style>
 
-    .logo span {
-      color: var(--accent);
-    }
-
-    nav a {
-      margin-left: 40px;
-      text-decoration: none;
-      color: var(--muted);
-      font-weight: 500;
-      font-size: 1rem;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    main {
-      max-width: 1600px;
-      margin: 0 auto;
-      padding-top: 200px;
-    }
-
-    section {
-      padding: 160px 8vw;
-    }
-
-    h1 {
-      font-size: clamp(4.5rem, 7vw, 7rem);
-      font-weight: 900;
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      margin-bottom: 48px;
-    }
-
-    h1 span {
-      color: var(--accent);
-    }
-
-    h2 {
-      font-size: clamp(3.2rem, 5.5vw, 4.8rem);
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 40px;
-      letter-spacing: -0.02em;
-    }
-
-    p {
-      font-size: 1.4rem;
-      max-width: 950px;
-      line-height: 1.9;
-      color: var(--muted);
-    }
-
-    .divider {
-      height: 1px;
-      width: 100%;
-      background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
-    }
-
-    .principles span {
-      display: block;
-      font-size: 1.6rem;
-      margin: 28px 0;
-      letter-spacing: 0.18em;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    footer {
-      margin-top: 200px;
-      padding: 140px 8vw 80px;
-      background: rgba(0,0,0,0.4);
-    }
-
-    .footer-top {
-      font-size: 3rem;
-      font-weight: 900;
-      margin-bottom: 40px;
-    }
-
-    .footer-top span {
-      color: var(--accent);
-    }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-top: 80px;
-    }
-  </style>
 </head>
 <body>
 
